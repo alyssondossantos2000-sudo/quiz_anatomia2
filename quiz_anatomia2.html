@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario P2<br>— Gabarito Oficial 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0d0f;--card:#18181f;--border:#2d2d3f;--pink:#f472b6;--rose:#fb7185;--light-pink:#fbb6ce;--purple:#a78bfa;--light-purple:#c4b5fd;--green:#34d399;--red:#f87171;--text:#f0e6ff;--muted:#8b8ba7}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;position:relative}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 20%,rgba(244,114,182,0.08) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 90% 80%,rgba(167,139,250,0.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(251,113,133,0.05) 0%,transparent 70%)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:0.025}
+@keyframes orbPulse{0%,100%{opacity:var(--op);transform:scale(1)}50%{opacity:calc(var(--op)*1.4);transform:scale(1.08)}}
+@keyframes bowFloat{0%{transform:translateY(0) rotate(var(--r0))}33%{transform:translateY(-12px) rotate(var(--r1))}66%{transform:translateY(6px) rotate(var(--r2))}100%{transform:translateY(0) rotate(var(--r0))}}
+@keyframes sparkleTwinkle{0%,100%{opacity:0;transform:scale(0.5)}50%{opacity:1;transform:scale(1)}}
+@keyframes diamondDrift{0%{transform:rotate(0deg) translateY(0)}50%{transform:rotate(180deg) translateY(-8px)}100%{transform:rotate(360deg) translateY(0)}}
+@keyframes cornerWiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes tabEmojiIdle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes tabEmojiActive{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes particleFly{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--px),var(--py)) scale(0)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 8px 2px var(--gc)}50%{box-shadow:0 0 20px 6px var(--gc)}}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbPulse var(--dur) var(--delay) ease-in-out infinite}
+.emoji-float{position:fixed;pointer-events:none;z-index:0;font-size:var(--sz);opacity:var(--op);animation:bowFloat var(--dur) var(--delay) ease-in-out infinite;user-select:none}
+.sparkle-svg{position:fixed;pointer-events:none;z-index:0;animation:sparkleTwinkle var(--dur) var(--delay) ease-in-out infinite}
+.diamond{position:fixed;pointer-events:none;z-index:0;width:8px;height:8px;background:var(--pink);opacity:0.18;transform:rotate(45deg);animation:diamondDrift var(--dur) var(--delay) ease-in-out infinite}
+.screen{display:none;position:relative;z-index:1;min-height:100vh;padding:32px 16px;animation:fadeIn 0.4s ease}
+.screen.active{display:block}
+.container{max-width:740px;margin:0 auto}
+.card-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden}
+.corner-emoji{position:absolute;top:14px;left:16px;font-size:28px;animation:cornerWiggle 2.5s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(244,114,182,0.45));user-select:none}
+.start-title{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--rose),var(--light-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin:40px 0 12px}
+.deco-line{width:60px;height:3px;background:linear-gradient(90deg,var(--pink),var(--rose));border-radius:2px;margin:0 0 20px}
+.start-desc{color:#c0b0d0;font-size:1rem;line-height:1.65;margin-bottom:24px;font-weight:300}
+.pill{display:inline-block;background:rgba(244,114,182,0.1);border:1px solid rgba(244,114,182,0.3);color:var(--light-pink);border-radius:99px;padding:4px 14px;font-size:0.78rem;font-weight:500;margin:3px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;border:none;position:relative;transition:transform 0.15s,filter 0.15s}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--rose));color:#fff}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted)}
+.btn-ghost:hover{border-color:var(--pink);color:var(--light-pink)}
+.btn-purple{background:transparent;border:1px solid rgba(167,139,250,0.4);color:var(--light-purple)}
+.progress-wrap{margin-bottom:20px}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:0.82rem;color:var(--muted)}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--pink),var(--rose));border-radius:3px;transition:width 0.5s ease}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.72rem;font-weight:600;margin-left:6px}
+.badge-section{background:rgba(244,114,182,0.15);color:var(--light-pink);border:1px solid rgba(244,114,182,0.3)}
+.badge-tema{background:rgba(167,139,250,0.12);color:var(--light-purple);border:1px solid rgba(167,139,250,0.25);font-size:0.75rem;margin:0 0 16px;display:inline-block;padding:4px 12px;border-radius:99px}
+.q-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.6;margin-bottom:20px}
+.vinheta{background:rgba(244,114,182,0.06);border-left:3px solid var(--pink);border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:18px;font-size:0.88rem;color:#d0b8e0;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.option-btn{display:flex;align-items:flex-start;gap:12px;background:rgba(45,45,63,0.4);border:1px solid var(--border);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--text);transition:border-color 0.2s,background 0.2s;width:100%}
+.option-btn:hover:not(:disabled){border-color:var(--pink);background:rgba(244,114,182,0.06)}
+.option-btn:disabled{cursor:default}
+.option-btn.correct{border-color:var(--green);background:rgba(52,211,153,0.08);color:var(--green)}
+.option-btn.wrong{border-color:var(--red);background:rgba(248,113,113,0.08);color:var(--red)}
+.option-btn.revealed{border-color:var(--green);background:rgba(52,211,153,0.06);color:var(--green)}
+.option-letter{width:26px;height:26px;border-radius:50%;background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0;color:var(--light-pink)}
+.option-btn.correct .option-letter{background:rgba(52,211,153,0.2);border-color:var(--green);color:var(--green)}
+.option-btn.wrong .option-letter{background:rgba(248,113,113,0.2);border-color:var(--red);color:var(--red)}
+.option-btn.revealed .option-letter{background:rgba(52,211,153,0.2);border-color:var(--green);color:var(--green)}
+.explanation{display:none;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;padding:16px;font-size:0.86rem;line-height:1.65;color:#d8cef0;animation:fadeIn 0.35s ease}
+.explanation.visible{display:block}
+.explanation strong{color:var(--light-pink)}
+.feedback-dontknow{background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);border-radius:10px;padding:10px 14px;font-size:0.84rem;color:var(--light-purple);margin-top:10px;display:none;animation:fadeIn 0.3s ease}
+.feedback-dontknow.visible{display:block}
+.return-pill{position:fixed;top:16px;right:16px;z-index:100;background:rgba(24,24,31,0.95);border:1px solid var(--purple);color:var(--light-purple);padding:7px 14px;border-radius:99px;font-size:0.78rem;font-weight:600;cursor:pointer;display:none;backdrop-filter:blur(8px)}
+.return-pill.visible{display:block}
+.card-shake{animation:shake 0.35s ease}
+.ring-wrap{display:flex;justify-content:center;margin:24px 0 32px}
+.ring-wrap svg{filter:drop-shadow(0 0 12px rgba(244,114,182,0.4))}
+.res-emoji{font-size:2.4rem;text-align:center;display:block;margin-bottom:8px}
+.res-title{font-family:'Playfair Display',serif;font-weight:900;font-size:1.8rem;text-align:center;background:linear-gradient(135deg,var(--pink),var(--light-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.res-sub{text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:30px}
+.tab-cards{display:flex;gap:12px;margin-bottom:24px}
+.tab-card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 12px;cursor:pointer;text-align:center;transition:transform 0.25s,border-color 0.25s}
+.tab-card:hover{transform:translateY(-2px)}
+.tab-card.active-tab{transform:translateY(-4px)}
+.tab-card.active-tab.tab-green{border-color:var(--green)}
+.tab-card.active-tab.tab-red{border-color:var(--red)}
+.tab-card.active-tab.tab-purple{border-color:var(--purple)}
+.tab-emoji{font-size:1.6rem;display:block;animation:tabEmojiIdle 2.5s ease-in-out infinite}
+.tab-card.active-tab .tab-emoji{animation:tabEmojiActive 0.4s ease}
+.tab-label{font-size:0.78rem;color:var(--muted);margin-top:6px;font-weight:500}
+.tab-count{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.tab-green .tab-count{color:var(--green)}
+.tab-red .tab-count{color:var(--red)}
+.tab-purple .tab-count{color:var(--purple)}
+.tab-content{display:none;animation:fadeIn 0.3s ease}
+.tab-content.active{display:block}
+.tab-top-btn{margin-bottom:16px}
+.q-item{background:rgba(45,45,63,0.3);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.q-item-header{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;cursor:pointer;font-size:0.88rem}
+.q-item-header:hover{background:rgba(244,114,182,0.04)}
+.q-item-num{font-weight:600;color:var(--light-pink);margin-right:8px;flex-shrink:0}
+.q-item-text{flex:1;line-height:1.4;color:#d0c0e0}
+.q-item-chevron{color:var(--muted);font-size:0.8rem;flex-shrink:0;transition:transform 0.2s}
+.q-item.open .q-item-chevron{transform:rotate(180deg)}
+.q-item-body{display:none;padding:0 16px 16px;border-top:1px solid var(--border)}
+.q-item.open .q-item-body{display:block}
+.chip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.75rem;font-weight:600;margin:8px 0}
+.chip-green{background:rgba(52,211,153,0.15);color:var(--green);border:1px solid rgba(52,211,153,0.3)}
+.chip-red{background:rgba(248,113,113,0.15);color:var(--red);border:1px solid rgba(248,113,113,0.3)}
+.q-vinheta{font-size:0.82rem;color:var(--muted);margin:8px 0;padding:8px 12px;background:rgba(244,114,182,0.04);border-left:2px solid var(--pink);border-radius:0 8px 8px 0}
+.q-expl{font-size:0.84rem;line-height:1.65;color:#d0c0e0;margin:10px 0;padding:10px 14px;border-left:3px solid var(--pink);background:rgba(244,114,182,0.04);border-radius:0 8px 8px 0}
+.learn-aula{background:rgba(167,139,250,0.05);border-left:3px solid var(--purple);border-radius:0 10px 10px 0;padding:14px;margin:12px 0;font-size:0.84rem;line-height:1.7}
+.learn-aula .aula-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--light-purple);display:block;margin-bottom:10px}
+.learn-aula ul{margin-left:16px;color:#d0c0e0}
+.learn-aula li{margin-bottom:6px}
+.learn-aula strong{color:var(--light-pink)}
+.learn-aula em{color:var(--light-purple)}
+.dica-prova{background:rgba(244,114,182,0.08);border:1px dashed rgba(244,114,182,0.35);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:0.82rem;color:var(--light-pink)}
+.slide-ref{color:var(--muted);font-size:0.78rem;margin-top:8px}
+.res-footer-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;justify-content:center}
+footer{text-align:center;padding:24px;color:var(--pink);font-family:'Playfair Display',serif;font-weight:700;font-size:13px;position:relative;z-index:1}
+</style>
+</head>
+<body>
+<button class="return-pill" id="returnPill" onclick="backToResults()">← <span id="returnPillLabel">Volver</span></button>
+<div class="screen active" id="screenStart">
+<div class="container" style="padding-top:40px">
+<div class="card-wrap">
+  <span class="corner-emoji">🪱</span>
+  <div class="start-title">Intestinos<br>Delgado & Grueso</div>
+  <div class="deco-line"></div>
+  <p class="start-desc">Quiz baseado nas questões reais da Prova P2 — gabarito confirmado pelo professor. Anatomía II, Cátedra Dra. Liz Leguizamón, Filial PJC, 2° semestre.</p>
+  <div><span class="pill">🫧 20 preguntas</span><span class="pill">🪷 Nivel intermediario</span><span class="pill">💉 2° semestre</span><span class="pill">✨ Con explicaciones</span></div>
+  <div style="margin-top:28px"><button class="btn btn-primary" onclick="fireParticles(this,true,'pink');startQuiz()">🎀 Comenzar Quiz</button></div>
+</div></div></div>
+<div class="screen" id="screenQuestion">
+<div class="container">
+<div class="progress-wrap">
+  <div class="progress-top"><span id="progressLabel">Pregunta 1 de 20</span><span><span class="badge badge-section" id="badgeSection">Objetiva</span></span></div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:5%"></div></div>
+</div>
+<div class="card-wrap" id="questionCard">
+  <span class="corner-emoji" id="qCorner">🎀</span>
+  <div class="badge-tema" id="badgeTema"></div>
+  <div class="vinheta" id="vinheta" style="display:none"></div>
+  <div class="q-text" id="qText"></div>
+  <div class="options" id="options"></div>
+  <div class="explanation" id="explanation"></div>
+  <div class="feedback-dontknow" id="feedbackDontknow">📖 Marcada para aprender</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:space-between;align-items:center">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-ghost" onclick="fireParticles(this,false,'white');prevQuestion()">← Anterior</button>
+      <button class="btn btn-ghost" onclick="fireParticles(this,false,'white');resetQuestion()">↺ Resetear</button>
+      <button class="btn btn-ghost" onclick="fireParticles(this,false,'white');revealAnswer()">👁 Ver respuesta</button>
+      <button class="btn btn-purple" onclick="fireParticles(this,false,'white');dontKnow()">🤍 No sé</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span id="qCounter" style="color:var(--muted);font-size:0.85rem"></span>
+      <button class="btn btn-primary" onclick="fireParticles(this,true,'pink');nextQuestion()">Siguiente →</button>
+    </div>
+  </div>
+</div></div></div>
+<div class="screen" id="screenResults">
+<div class="container">
+<div class="card-wrap" style="margin-bottom:20px">
+  <span class="corner-emoji" id="resCorner">🌸</span>
+  <div class="ring-wrap">
+    <svg width="140" height="140" viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="58" fill="none" stroke="var(--border)" stroke-width="10"/>
+      <circle id="ringCircle" cx="70" cy="70" r="58" fill="none" stroke="url(#rg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="364.4" stroke-dashoffset="364.4" transform="rotate(-90 70 70)" style="transition:stroke-dashoffset 1s ease"/>
+      <defs><linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+      <text id="ringPct" x="70" y="76" text-anchor="middle" font-family="'Playfair Display',serif" font-size="26" font-weight="900" fill="var(--text)">0%</text>
+    </svg>
+  </div>
+  <div class="res-emoji" id="resEmoji">🌸</div>
+  <div class="res-title" id="resTitle">Resultado</div>
+  <div class="res-sub" id="resSub"></div>
+  <div class="tab-cards">
+    <div class="tab-card tab-green" id="tabCardCorrect" onclick="showTab('correct',this)"><span class="tab-emoji">🌸</span><div class="tab-count" id="countCorrect">0</div><div class="tab-label">Aciertos</div></div>
+    <div class="tab-card tab-red" id="tabCardWrong" onclick="showTab('wrong',this)"><span class="tab-emoji">🫧</span><div class="tab-count" id="countWrong">0</div><div class="tab-label">Errores</div></div>
+    <div class="tab-card tab-purple" id="tabCardLearn" onclick="showTab('learn',this)"><span class="tab-emoji">📖</span><div class="tab-count" id="countLearn">0</div><div class="tab-label">Aprender</div></div>
+  </div>
+  <div class="tab-content" id="tabCorrect"><div class="tab-top-btn"><button class="btn btn-ghost" style="border-color:rgba(52,211,153,0.4);color:var(--green)" onclick="fireParticles(this,false,'white');window.scrollTo({top:0,behavior:'smooth'})">↑ Ver puntuación</button></div><div id="listCorrect"></div></div>
+  <div class="tab-content" id="tabWrong"><div class="tab-top-btn"><button class="btn btn-ghost" style="border-color:rgba(248,113,113,0.4);color:var(--red)" onclick="fireParticles(this,false,'white');window.scrollTo({top:0,behavior:'smooth'})">↑ Ver puntuación</button></div><div id="listWrong"></div></div>
+  <div class="tab-content" id="tabLearn"><div class="tab-top-btn"><button class="btn btn-ghost" style="border-color:rgba(167,139,250,0.4);color:var(--purple)" onclick="fireParticles(this,false,'white');window.scrollTo({top:0,behavior:'smooth'})">↑ Ver puntuación</button></div><div id="listLearn"></div></div>
+  <div class="res-footer-btns">
+    <button class="btn btn-ghost" onclick="fireParticles(this,false,'white');resetAll()">↺ Rehacer quiz</button>
+    <button class="btn btn-primary" onclick="fireParticles(this,true,'pink');resetAll()">🎀 Nuevo quiz</button>
+  </div>
+</div></div></div>
+<footer>By: Anatomía II 🎀</footer>
+<script>
+const ALL_QUESTIONS=[
+{tema:"Cuadrantes Gástricos",seccion:"Objetiva",vinheta:null,
+text:"Son cuadrantes abdominales donde podemos encontrar el estómago, EXCEPTO:",
+options:["Hipocondrio izquierdo","Hipocondrio derecho","Umbilical","Epigastrio","Epigastrio e hipocondrio izquierdo"],
+answer:2,explanation:"El estómago ocupa el <strong>epigastrio, hipocondrio izquierdo</strong> y en parte el <strong>hipocondrio derecho</strong> (píloro). <strong>NO se encuentra en el cuadrante umbilical</strong>. Prova P2 Q1."},
+{tema:"Cardias",seccion:"Objetiva",vinheta:null,
+text:"Porción del estómago donde desemboca el esófago:",
+options:["Pilórica","Fundus gástrico","Cuerpo del estómago","Cardias","Antro pilórico"],
+answer:3,explanation:"El <strong>cardias</strong> es la porción donde desemboca el esófago. Es el orificio oval de unión esofagogástrica, sin relieve muscular. Prova P2 Q2."},
+{tema:"Incisura Angular",seccion:"Objetiva",vinheta:null,
+text:"Anatómicamente, ¿cómo se puede apreciar la unión del cuerpo del estómago con la porción pilórica?",
+options:["Incisura de His","Incisura del cardias","Incisura angular","Ninguna de las anteriores","Incisura pilórica"],
+answer:2,explanation:"La unión del cuerpo del estómago con la porción pilórica se aprecia como la <strong>incisura angular (angularis)</strong>. El ángulo de His es el ángulo entre el esófago y la curvatura mayor del estómago. Prova P2 Q3."},
+{tema:"Transformación Bolo a Quimo",seccion:"Objetiva",vinheta:null,
+text:"La transformación del bolo alimenticio a quimo se lleva a cabo en:",
+options:["Intestino delgado","Intestino grueso","Estómago","Boca","Duodeno"],
+answer:2,explanation:"La transformación del bolo alimenticio en <strong>quimo</strong> se lleva a cabo en el <strong>estómago</strong>. Las enzimas gástricas y el HCl desnaturalizan las proteínas y producen el quimo ácido que pasa al duodeno. Prova P2 Q4."},
+{tema:"Relaciones del Riñón Izquierdo",seccion:"Objetiva",vinheta:null,
+text:"¿Cuál de los siguientes órganos se relaciona con el riñón IZQUIERDO?",
+options:["Hígado","Duodeno","Estómago","Ninguna de las anteriores","Vesícula biliar"],
+answer:2,explanation:"El riñón <strong>izquierdo</strong> se relaciona con: estómago, bazo, páncreas, colon transverso y flexura cólica izquierda. El hígado y el duodeno se relacionan con el riñón <strong>derecho</strong>. Prova P2 Q5."},
+{tema:"Funciones del Estómago",seccion:"Objetiva",vinheta:null,
+text:"¿Cuál de las siguientes NO es una función del estómago?",
+options:["Almacenar alimentos","Producción de jugo gástrico","Transformar el alimento a quimo","Secreción de bilis","Secreción del factor intrínseco"],
+answer:3,explanation:"La <strong>secreción de bilis</strong> es función del <strong>hígado</strong> (y se almacena en la vesícula biliar), NO del estómago. Las funciones del estómago incluyen: almacenar alimentos, producir jugo gástrico (HCl + pepsinógeno), transformar el bolo en quimo y secretar el factor intrínseco. Prova P2 Q6."},
+{tema:"Capacidad del Estómago",seccion:"Objetiva",vinheta:null,
+text:"¿Cuánta comida puede almacenar el estómago (capacidad media)?",
+options:["2-3 L","500 ml","3-4 L","1-2 L","4-5 L"],
+answer:3,explanation:"La capacidad media del estómago es de <strong>1300 cm³ (≈1-2 L)</strong>. Puede expandirse hasta ~4 L en máxima distensión, pero la capacidad media normal es 1-2 L. Prova P2 Q7 / Slide 10 Clase 13."},
+{tema:"Relación del Fundus",seccion:"Objetiva",vinheta:null,
+text:"Superiormente, el fundus gástrico se relaciona con:",
+options:["Páncreas","Colon transverso","Lóbulo izquierdo del hígado","Diafragma","Bazo"],
+answer:3,explanation:"Superiormente, el <strong>fundus gástrico</strong> se relaciona con el <strong>diafragma</strong>. El fundus es la porción más elevada del estómago, se apoya contra la cúpula diafragmática izquierda. Prova P2 Q8."},
+{tema:"Bolsa Omental",seccion:"Objetiva",vinheta:null,
+text:"¿Entre cuáles estructuras hallamos la bolsa omental?",
+options:["Intestino delgado y grueso","Estómago y páncreas","Estómago e hígado","Hígado y bazo","Bazo y estómago"],
+answer:1,explanation:"La <strong>bolsa omental (transcavidad de los epiplones)</strong> se ubica entre el <strong>estómago</strong> (pared anterior) y el <strong>páncreas</strong> (pared posterior). Arriba: hígado; abajo: epiplón mayor. Prova P2 Q9."},
+{tema:"Músculo de Treitz",seccion:"Objetiva",vinheta:null,
+text:"La flexura duodenoyeyunal es suspendida por:",
+options:["Ligamento falciforme","Omento mayor","Músculo de Treitz","Omento menor","Ligamento redondo"],
+answer:2,explanation:"La <strong>flexura duodenoyeyunal (ángulo de Treitz)</strong> es suspendida por el <strong>músculo de Treitz</strong> (músculo suspensor del duodeno), que se inserta en el pilar derecho del diafragma. Prova P2 Q10."},
+{tema:"Arco Perirrenal",seccion:"Objetiva",vinheta:null,
+text:"El arco arterial perirrenal o capsular está formado, EXCEPTO uno:",
+options:["Cólicas superiores","Gonadales","Lumbares","Renales","Frénicas"],
+answer:0,explanation:"Las <strong>arterias cólicas</strong> son ramas de la arteria mesentérica superior destinadas al colon — <strong>NO forman parte del arco perirrenal</strong>. El arco perirrenal está formado por: renales, gonadales, lumbares y frénicas. Prova P2 Q11."},
+{tema:"Ramas del Tronco Celíaco",seccion:"Objetiva",vinheta:null,
+text:"Las ramas del tronco celíaco son:",
+options:["Arteria hepática, arteria cística y arteria esplénica","Arteria gastroepiploica derecha e izquierda","Arteria esplénica, gástrica izquierda y hepática común","Arteria mesentérica superior e inferior","Arteria hepática propia, gástrica izquierda y esplénica"],
+answer:2,explanation:"Las 3 ramas directas del tronco celíaco son: <strong>arteria esplénica + arteria gástrica izquierda (coronaria estomáquica) + arteria hepática común</strong>. La cística y la hepática propia son ramas secundarias. Prova P2 Q12."},
+{tema:"Íleon y Yeyuno",seccion:"Objetiva",vinheta:null,
+text:"Sobre el intestino delgado, NO es correcto afirmar:",
+options:["El yeyuno está cerca de la flexura duodenoyeyunal","El íleon está cerca de la flexura duodenoyeyunal","El íleon está cerca de la válvula ileocecal","El yeyuno tiene pliegues circulares más prominentes que el íleon","El íleon tiene placas de Peyer"],
+answer:1,explanation:"Es INCORRECTO decir que 'el íleon está cerca de la flexura duodenoyeyunal'. El <strong>íleon</strong> está cerca de la <strong>válvula ileocecal</strong> (distal). El <strong>yeyuno</strong> está cerca de la <strong>flexura duodenoyeyunal</strong> (proximal). Prova P2 Q12."},
+{tema:"Válvula Ileocecal",seccion:"Objetiva",vinheta:null,
+text:"Sobre el intestino grueso, es correcto afirmar que el orificio ileal está bordeado por:",
+options:["Válvula apendicular de Gerlach","Válvula de Gubarow","Papila ileal (válvula de Bauhin)","Válvula connivente de Kerckring","Válvula de Heister"],
+answer:2,explanation:"El <strong>orificio ileal</strong> está bordeado por la <strong>papila ileal (válvula ileocecal o de Bauhin)</strong>. La válvula de Gerlach es la válvula apendicular. La de Gubarow es del cardias. Prova P2 Q13."},
+{tema:"Raíz del Mesenterio",seccion:"Objetiva",vinheta:null,
+text:"Lo correcto sobre la raíz del mesenterio:",
+options:["Va del flanco derecho a nivel de L1 hasta la articulación sacroilíaca izquierda","Va del flanco izquierdo a nivel de L2 hasta la articulación sacroilíaca derecha","Va del ángulo de Treitz hasta la unión ileocecal, con 6 cm de largo","Va del flanco derecho a nivel de L2 hasta el promontorio sacro","Va de la flexura esplénica hasta la región ileocecal en la fosa ilíaca derecha"],
+answer:1,explanation:"La raíz del mesenterio va del <strong>flanco izquierdo a nivel de L2</strong> hasta la <strong>articulación sacroilíaca derecha</strong> (~15 cm de longitud). Se dirige oblicuamente de arriba-izquierda a abajo-derecha. Prova P2 Q14."},
+{tema:"Lóbulos del Hígado",seccion:"Objetiva",vinheta:null,
+text:"Sobre el hígado es correcto afirmar:",
+options:["Presenta 2 lóbulos (derecho e izquierdo)","Presenta 8 segmentos y 2 lóbulos","Presenta 4 lóbulos (derecho, izquierdo, cuadrado y caudado)","Presenta 7 segmentos de Couinaud","Presenta 6 lóbulos según la segmentación de Couinaud"],
+answer:2,explanation:"El hígado presenta <strong>4 lóbulos</strong>: <strong>derecho, izquierdo, cuadrado y caudado (de Spiegel)</strong>. Según la segmentación de Couinaud tiene 8 segmentos funcionales, pero anatómicamente se describen 4 lóbulos. Prova P2 Q15."},
+{tema:"Irrigación Funcional del Hígado",seccion:"Objetiva",vinheta:null,
+text:"La irrigación FUNCIONAL del hígado está dada por:",
+options:["La arteria hepática propia, que aporta O₂ al hepatocito","La vena porta hepática, que trae nutrientes absorbidos del intestino","La arteria hepática común, que es la rama directa del tronco celíaco","La vena cava inferior, que regula el retorno venoso del hígado","La arteria cística, que irriga funcionalmente los conductos biliares"],
+answer:1,explanation:"La <strong>irrigación funcional</strong> del hígado es la <strong>vena porta hepática</strong> (trae nutrientes del intestino: aminoácidos, glucosa, etc.). La irrigación <strong>nutricia</strong> es la arteria hepática propia (aporta O₂). Prova P2 Q16."},
+{tema:"Fascia de Zuckerkandl",seccion:"Objetiva",vinheta:null,
+text:"La fascia que envuelve el riñón hacia atrás se denomina:",
+options:["Fascia de Gerota","Fascia transversalis","Fascia de Zuckerkandl","Fascia de Gerlach","Fascia de coalescencia"],
+answer:2,explanation:"La <strong>hoja posterior</strong> de la fascia renal se denomina <strong>fascia de Zuckerkandl</strong> (más gruesa y resistente). La <strong>hoja anterior</strong> es la <strong>fascia de Gerota</strong> (delgada). Prova P2 Q17."},
+{tema:"Relación Posterior del Riñón",seccion:"Objetiva",vinheta:null,
+text:"Relación posterior del riñón de afuera hacia adentro:",
+options:["Psoas mayor, cuadrado lumbar, transverso","Cuadrado lumbar, psoas mayor, transverso","Transverso del abdomen, cuadrado lumbar, psoas mayor","Iliopsoas, cuadrado lumbar, músculo transverso","Cuadrado lumbar, transverso, psoas mayor"],
+answer:2,explanation:"De <strong>afuera → adentro</strong>: <strong>músculo transverso del abdomen → cuadrado lumbar → psoas mayor</strong>. Prova P2 Q18."},
+{tema:"Columnas de Bertin",seccion:"Objetiva",vinheta:null,
+text:"Verdadero o Falso: Las columnas de Bertin son prolongaciones del tejido MEDULAR del riñón que se localizan entre las pirámides de Malpighi.",
+options:["VERDADERO — son extensiones de la médula renal","FALSO — son prolongaciones de la CORTEZA renal entre las pirámides","VERDADERO — son tejido medular que separa los lóbulos","FALSO — son vasos sanguíneos entre las pirámides","VERDADERO — son parte de las pirámides de Malpighi extendidas"],
+answer:1,explanation:"<strong>FALSO</strong>. Las columnas de Bertin son <strong>prolongaciones de la CORTEZA renal</strong> (no medular) que se proyectan entre las pirámides de Malpighi. Este error es clásico de examen. Prova P2 Q22."},
+{tema:"Formaciones Peritoneales",seccion:"Objetiva",vinheta:null,
+text:"¿Qué elemento peritoneal une órgano a pared con arterias y venas entre sus hojas?",
+options:["Ligamentos","Epiplones","Fondo de saco","Mesos","Fascia de coalescencia"],
+answer:3,explanation:"Los <strong>mesos</strong> son repliegues peritoneales que unen un órgano a la pared posterior, con vasos y nervios entre sus hojas (ej: mesenterio, mesocolon). Los <strong>epiplones</strong> unen órgano a órgano. Los <strong>ligamentos</strong> unen sin vasos principales. Prova P2 — Pareamiento Q26."}
+];
+
+const LESSONS=[
+{title:"Cuadrantes del Estómago",slideRef:"Prova P2 Q1",html:`<span class="aula-title">Estómago — Cuadrantes</span><ul><li>SÍ: Epigastrio + Hipocondrio izquierdo + Hipocondrio derecho (píloro)</li><li>NO: Umbilical, flancos, fosas ilíacas</li></ul><div class="dica-prova">🎯 El estómago NUNCA está en el cuadrante umbilical. La respuesta correcta siempre es el umbilical cuando preguntan la excepción.</div><div class="slide-ref">🪷 Prova P2 Q1 / Slide 3 Clase 13</div>`},
+{title:"Cardias",slideRef:"Prova P2 Q2 / Slide 3 Clase 13",html:`<span class="aula-title">Cardias — Unión Esofagogástrica</span><ul><li>Unión esófago → estómago</li><li>Orificio OVAL, sin esfínter muscular anatómico</li><li>Orientado: arriba + adelante + derecha</li></ul><div class="dica-prova">🎯 Cardias = conexión esófago-estómago (ENTRADA). Píloro = conexión estómago-duodeno (SALIDA). Cardias sin esfínter, píloro CON esfínter.</div><div class="slide-ref">🪷 Prova P2 Q2 / Slide 9 Clase 13</div>`},
+{title:"Incisura Angular",slideRef:"Prova P2 Q3 / Slide 16 Clase 13",html:`<span class="aula-title">Incisura Angular (Angularis)</span><ul><li>Unión de la porción vertical + horizontal del estómago</li><li>Visible en la curvatura MENOR</li><li>El ángulo de His = ángulo curvatura mayor + esófago</li></ul><div class="dica-prova">🎯 Angular = cuerpo + antro (curvatura menor). His = esófago + curvatura mayor. Son ángulos diferentes en extremos diferentes del estómago.</div><div class="slide-ref">🪷 Prova P2 Q3 / Slide 16 Clase 13</div>`},
+{title:"Bolo a Quimo",slideRef:"Prova P2 Q4",html:`<span class="aula-title">Estómago — Digestión Química</span><ul><li>El ESTÓMAGO transforma el bolo alimenticio en QUIMO</li><li>Quimo = mezcla semilíquida ácida de alimentos parcialmente digeridos</li><li>HCl + pepsina + movimientos peristálticos → quimo</li></ul><div class="dica-prova">🎯 Boca → bolo. Estómago → quimo (ácido). Intestino delgado → quilo (emulsionado con bilis). Cada segmento tiene su término específico.</div><div class="slide-ref">🪷 Prova P2 Q4</div>`},
+{title:"Relaciones del Riñón Izquierdo",slideRef:"Prova P2 Q5 / Slide 22 Clase 17",html:`<span class="aula-title">Riñón Izquierdo — Relaciones</span><ul><li><strong>Izquierdo:</strong> estómago, bazo, páncreas (cuerpo-cola), colon transverso/flexura esplénica, asas delgadas</li><li><strong>Derecho:</strong> hígado, duodeno, flexura cólica derecha</li></ul><div class="dica-prova">🎯 Izquierdo = BAZO + PÁNCREAS + estómago. Derecho = HÍGADO + DUODENO. Esta distinción es pregunta obligatoria de anatomía.</div><div class="slide-ref">🪷 Prova P2 Q5 / Slide 22 Clase 17</div>`},
+{title:"Funciones del Estómago",slideRef:"Prova P2 Q6",html:`<span class="aula-title">Funciones del Estómago</span><ul><li>Almacenar alimentos</li><li>Producción de jugo gástrico (HCl + pepsinógeno)</li><li>Transformar el bolo en quimo</li><li>Secretar el factor intrínseco (células parietales)</li><li>NO produce bilis (eso es el hígado)</li></ul><div class="dica-prova">🎯 La BILIS la produce el HÍGADO, no el estómago. Error frecuente en opciones de examen. La vesícula solo ALMACENA la bilis.</div><div class="slide-ref">🪷 Prova P2 Q6</div>`},
+{title:"Capacidad del Estómago",slideRef:"Prova P2 Q7 / Slide 10 Clase 13",html:`<span class="aula-title">Capacidad Gástrica</span><ul><li><strong>Capacidad media:</strong> 1300 cm³ (≈1-2 L)</li><li>Máxima distensión: hasta ~4 L</li><li>Dimensiones: 25 × 12 × 8 cm</li></ul><div class="dica-prova">🎯 Capacidad MEDIA = 1300 cm³ = 1,3 L. La respuesta 1-2 L es correcta. Importante: NO confundir con 2-3 L ni con 500 mL.</div><div class="slide-ref">🪷 Prova P2 Q7 / Slide 10 Clase 13</div>`},
+{title:"Relación Superior del Fundus",slideRef:"Prova P2 Q8",html:`<span class="aula-title">Fundus Gástrico — Relación Superior</span><ul><li>Superiormente: <strong>diafragma</strong></li><li>El fundus está inmediatamente debajo de la cúpula diafragmática izquierda</li><li>En la radiografía de tórax: se ve la burbuja gástrica bajo el diafragma</li></ul><div class="dica-prova">🎯 La burbuja gástrica en la RX de tórax corresponde al FUNDUS (debajo del diafragma izquierdo). Clínica: en el hernia diafragmática, el fundus es lo que más se hernia.</div><div class="slide-ref">🪷 Prova P2 Q8</div>`},
+{title:"Bolsa Omental",slideRef:"Prova P2 Q9 / Slide 20 Clase 13",html:`<span class="aula-title">Bolsa Omental — Localización</span><ul><li>Entre <strong>estómago</strong> (anterior) y <strong>páncreas</strong> (posterior)</li><li>Arriba: cara inferior del hígado</li><li>Abajo: epiplón gastrocólico (mayor)</li></ul><div class="dica-prova">🎯 La bolsa omental = transcavidad de los epiplones. Está entre el estómago y el páncreas. Pseudoquistes pancreáticos y derrames se acumulan aquí.</div><div class="slide-ref">🪷 Prova P2 Q9 / Slide 20 Clase 13</div>`},
+{title:"Músculo de Treitz",slideRef:"Prova P2 Q10 / Slide 9 Clase 14",html:`<span class="aula-title">Músculo de Treitz</span><ul><li>Suspende la flexura duodenoyeyunal (ángulo de Treitz)</li><li>Se inserta en el pilar DERECHO del diafragma</li><li>Marca el límite entre hemorragia digestiva alta y baja</li></ul><div class="dica-prova">🎯 El músculo de Treitz NO es el ligamento de Treitz (confusión frecuente). Es el músculo suspensor del duodeno que mantiene la flexura en posición. Treitz = límite del sangramiento digestivo.</div><div class="slide-ref">🪷 Prova P2 Q10 / Slide 9 Clase 14</div>`},
+{title:"Arco Perirrenal",slideRef:"Prova P2 Q11",html:`<span class="aula-title">Arco Arterial Perirrenal</span><ul><li>Formado por: renales + gonadales + lumbares + frénicas</li><li>Las <strong>cólicas NO forman parte</strong> del arco perirrenal</li></ul><div class="dica-prova">🎯 Las cólicas van al COLON (mesentéricas). Las renales, gonadales, lumbares y frénicas rodean el riñón. La pregunta siempre tiene a las cólicas como la EXCEPCIÓN.</div><div class="slide-ref">🪷 Prova P2 Q11</div>`},
+{title:"Ramas del Tronco Celíaco",slideRef:"Prova P2 Q12 / Clase 12",html:`<span class="aula-title">Tronco Celíaco — 3 Ramas Directas</span><ul><li><strong>Arteria esplénica</strong></li><li><strong>Arteria gástrica izquierda</strong> (coronaria estomáquica)</li><li><strong>Arteria hepática común</strong></li><li>La cística y la hepática PROPIA son ramas SECUNDARIAS</li></ul><div class="dica-prova">🎯 EGH = Esplénica + Gástrica izquierda + Hepática COMÚN. Las 3 ramas DIRECTAS del tronco celíaco. La arteria CÍSTICA nace de la hepática DERECHA (dentro del triángulo de Calot).</div><div class="slide-ref">🪷 Prova P2 Q12 / Clase 12</div>`},
+{title:"Yeyuno vs Íleon",slideRef:"Prova P2 Q12 / Clase 14",html:`<span class="aula-title">Yeyuno e Íleon — Posición</span><ul><li><strong>Yeyuno:</strong> cerca de la flexura DUODENOYEYUNAL (inicio)</li><li><strong>Íleon:</strong> cerca de la válvula ILEOCECAL (final)</li></ul><div class="dica-prova">🎯 YEYUNO comienza en el TREITZ. ÍLEON termina en la ILEOCECAL. El íleon NO está cerca del Treitz. Error clásico e importante en el examen.</div><div class="slide-ref">🪷 Prova P2 Q12 / Clase 14</div>`},
+{title:"Válvula de Bauhin",slideRef:"Prova P2 Q13 / Clase 15",html:`<span class="aula-title">Válvulas del Intestino Grueso</span><ul><li><strong>Válvula de Bauhin</strong> (papila ileal) = válvula ILEOCECAL</li><li><strong>Válvula de Gerlach</strong> = válvula APENDICULAR</li></ul><div class="dica-prova">🎯 Bauhin = ileocecal. Gerlach = apendicular. Gubarow = cárdia (estómago). Son tres válvulas diferentes con nombres específicos.</div><div class="slide-ref">🪷 Prova P2 Q13 / Clase 15</div>`},
+{title:"Raíz del Mesenterio",slideRef:"Prova P2 Q14",html:`<span class="aula-title">Raíz del Mesenterio</span><ul><li>Desde flanco <strong>izquierdo a nivel de L2</strong></li><li>Hasta articulación <strong>sacroilíaca derecha</strong></li><li>Dirección: oblicua, de arriba-izquierda a abajo-derecha</li><li>Longitud: ~15 cm</li></ul><div class="dica-prova">🎯 L2 izquierda → sacroilíaca DERECHA. De izquierda a derecha. De arriba a abajo. Esta dirección oblicua permite que el mesenterio distribuya bien el intestino delgado.</div><div class="slide-ref">🪷 Prova P2 Q14</div>`},
+{title:"4 Lóbulos del Hígado",slideRef:"Prova P2 Q15 / Clase 16",html:`<span class="aula-title">4 Lóbulos Hepáticos</span><ul><li><strong>Derecho:</strong> el más grande</li><li><strong>Cuadrado:</strong> entre fosa vesícula + fisura lig. redondo, delante del hilio</li><li><strong>Izquierdo:</strong> izquierda de la línea VCI-fosa vesícula</li><li><strong>Caudado (de Spiegel):</strong> detrás del hilio, lóbulo independiente</li></ul><div class="dica-prova">🎯 4 lóbulos. No 2, no 6, no 8. El caudado es el especial: está DETRÁS del hilio y drena directamente en la VCI. Los otros 3 drenan a través de las venas hepáticas.</div><div class="slide-ref">🪷 Prova P2 Q15 / Clase 16</div>`},
+{title:"Irrigación Hepática",slideRef:"Prova P2 Q16 / Clase 16",html:`<span class="aula-title">Irrigación del Hígado</span><ul><li><strong>Funcional = vena porta</strong> (nutrientes del intestino)</li><li><strong>Nutricia = arteria hepática propia</strong> (O₂)</li></ul><div class="dica-prova">🎯 Funcional ≠ nutricia. La arteria da O₂ (nutrición), la porta da nutrientes (función). En trasplante hepático la arteria es más crítica — sin ella el árbol biliar hace isquemia.</div><div class="slide-ref">🪷 Prova P2 Q16 / Clase 16</div>`},
+{title:"Fascia de Zuckerkandl",slideRef:"Prova P2 Q17 / Clase 17",html:`<span class="aula-title">Zuckerkandl vs Gerota</span><ul><li><strong>Zuckerkandl = POSTERIOR</strong> (más gruesa y resistente)</li><li><strong>Gerota = ANTERIOR</strong> (delgada, reforzada por fascias de coalescencia)</li></ul><div class="dica-prova">🎯 La que va HACIA ATRÁS = Zuckerkandl. La que va HACIA ADELANTE = Gerota. Asociación: Z = final del abecedario = posterior.</div><div class="slide-ref">🪷 Prova P2 Q17 / Clase 17</div>`},
+{title:"Relación Posterior del Riñón",slideRef:"Prova P2 Q18 / Clase 17",html:`<span class="aula-title">Músculos Posteriores del Riñón</span><ul><li>De <strong>afuera → adentro:</strong> Transverso → Cuadrado lumbar → Psoas mayor</li></ul><div class="dica-prova">🎯 Mnemónico: TCP de afuera a adentro (Transverso-Cuadrado-Psoas). El PSOAS es el más MEDIAL (el más interno). El TRANSVERSO es el más LATERAL (el más externo).</div><div class="slide-ref">🪷 Prova P2 Q18 / Clase 17</div>`},
+{title:"Columnas de Bertin — FALSO",slideRef:"Prova P2 Q22",html:`<span class="aula-title">Columnas de Bertin — CORTEZA</span><ul><li>Las columnas de Bertin = prolongaciones de la <strong>CORTEZA</strong></li><li>NO son del tejido medular</li><li>Se localizan ENTRE las pirámides de Malpighi</li></ul><div class="dica-prova">🎯 ERROR CLÁSICO: decir que Bertin = médula. CORRECTO: Bertin = CORTEZA. La pirámide de Malpighi es MÉDULA. Bertin separa las pirámides y es tejido CORTICAL.</div><div class="slide-ref">🪷 Prova P2 Q22</div>`},
+{title:"Formaciones Peritoneales — Mesos",slideRef:"Prova P2 Q26",html:`<span class="aula-title">Formaciones Peritoneales</span><ul><li><strong>Mesos:</strong> órgano → PARED; CON vasos</li><li><strong>Epiplones:</strong> órgano → ÓRGANO; con vasos</li><li><strong>Ligamentos:</strong> órgano → órgano o pared; SIN vasos principales</li><li><strong>Fascia de coalescencia:</strong> adosa órganos a la pared posterior</li><li><strong>Fondo de saco:</strong> zona más declive de la cavidad</li></ul><div class="dica-prova">🎯 Mesos = con vasos + une a la pared. Epiplones = con vasos + une órgano a órgano. Ligamentos = SIN vasos. Esta es la diferencia fundamental del peritoneo.</div><div class="slide-ref">🪷 Prova P2 Q26</div>`}
+];
+
+let current=0,answers=[],returnTab=null;
+const CE=['🎀','🫧','🪷','💉','🌸','✨'];
+function initAnswers(){answers=ALL_QUESTIONS.map(()=>({chosen:null,revealed:false,dontknow:false}))}
+function initBows(){
+  [{w:400,h:300,t:5,l:60,c:'rgba(244,114,182,0.12)',dur:'8s',delay:'0s'},{w:350,h:350,t:60,l:5,c:'rgba(167,139,250,0.1)',dur:'11s',delay:'2s'},{w:300,h:400,t:30,l:70,c:'rgba(251,113,133,0.08)',dur:'9s',delay:'1s'},{w:500,h:250,t:80,l:30,c:'rgba(196,181,253,0.09)',dur:'13s',delay:'3s'},{w:280,h:280,t:45,l:50,c:'rgba(244,114,182,0.07)',dur:'10s',delay:'4s'}].forEach(o=>{const d=document.createElement('div');d.className='orb';d.style.cssText=`width:${o.w}px;height:${o.h}px;top:${o.t}%;left:${o.l}%;background:${o.c};--dur:${o.dur};--delay:${o.delay};--op:1`;document.body.appendChild(d)});
+  ['🎀','🫧','🌸','✨','🪷','💉','🎀','🌸','✨','🫧','🪷','💉','🎀'].forEach((e,i)=>{const d=document.createElement('div');d.className='emoji-float';const sz=18+Math.floor(Math.random()*30);d.style.cssText=`top:${5+Math.random()*90}%;left:${2+Math.random()*96}%;--sz:${sz}px;--op:${0.08+Math.random()*0.12};--dur:${(12+Math.random()*10).toFixed(1)}s;--delay:${(Math.random()*6).toFixed(1)}s;--r0:${[-5,-15,8,-22,12,-5,18,-10,25,-8,15,-20,5][i]}deg;--r1:${[10,5,-12,15,-18,10,-5,20,-15,12,-8,25,-10][i]}deg;--r2:${[-5,20,-8,10,-10,15,8,-15,20,-5,18,-12,15][i]}deg`;d.textContent=e;document.body.appendChild(d)});
+  for(let i=0;i<9;i++){const d=document.createElementNS('http://www.w3.org/2000/svg','svg');d.setAttribute('width','14');d.setAttribute('height','14');d.setAttribute('viewBox','0 0 14 14');d.classList.add('sparkle-svg');const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d','M7 0L8.2 5.8 14 7 8.2 8.2 7 14 5.8 8.2 0 7 5.8 5.8 7 0Z');p.setAttribute('fill','#f472b6');d.appendChild(p);d.style.cssText=`top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${(2+Math.random()*3).toFixed(1)}s;--delay:${(Math.random()*4).toFixed(1)}s;opacity:0`;document.body.appendChild(d)}
+  for(let i=0;i<10;i++){const d=document.createElement('div');d.className='diamond';d.style.cssText=`top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${(6+Math.random()*8).toFixed(1)}s;--delay:${(Math.random()*5).toFixed(1)}s`;document.body.appendChild(d)}
+}
+function fireParticles(btn,isCorrect,palette){
+  const p={correct:{colors:['#34d399','#6ee7b7'],n:16},wrong:{colors:['#f87171','#fca5a5'],n:10},white:{colors:['#fdf2f8','#fbb6ce'],n:10},pink:{colors:['#f472b6','#fb7185','#fbb6ce'],n:12},'tab-correct':{colors:['#f472b6','#34d399'],n:14},'tab-wrong':{colors:['#f87171','#fb7185'],n:14},'tab-learn':{colors:['#a78bfa','#f472b6'],n:14}}[palette]||{colors:['#fdf2f8'],n:10};
+  btn.style.setProperty('--gc',p.colors[0]);btn.style.animation='glowPulse 0.4s ease';setTimeout(()=>{btn.style.animation=''},500);
+  const rect=btn.getBoundingClientRect();
+  for(let i=0;i<p.n;i++){const el=document.createElement('div');const a=Math.random()*Math.PI*2;const dist=40+Math.random()*60;const dur=(0.5+Math.random()*0.5).toFixed(2)+'s';const color=p.colors[Math.floor(Math.random()*p.colors.length)];const sz=3+Math.random()*4;el.style.cssText=`position:fixed;left:${rect.left+Math.random()*rect.width}px;top:${rect.top+Math.random()*rect.height}px;width:${sz}px;height:${sz}px;border-radius:50%;background:${color};box-shadow:0 0 4px ${color};pointer-events:none;z-index:9999;--px:${Math.cos(a)*dist}px;--py:${Math.sin(a)*dist}px;animation:particleFly ${dur} ease forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),700)}
+}
+function startQuiz(){initAnswers();current=0;returnTab=null;showScreen('screenQuestion');renderQuestion()}
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function renderQuestion(){
+  const q=ALL_QUESTIONS[current],a=answers[current];
+  document.getElementById('qCorner').textContent=CE[current%CE.length];
+  document.getElementById('progressLabel').textContent=`Pregunta ${current+1} de ${ALL_QUESTIONS.length}`;
+  document.getElementById('progressFill').style.width=((current+1)/ALL_QUESTIONS.length*100)+'%';
+  document.getElementById('badgeSection').textContent=q.seccion;
+  document.getElementById('badgeTema').textContent=q.tema;
+  document.getElementById('qCounter').textContent=`${current+1}/${ALL_QUESTIONS.length}`;
+  const vEl=document.getElementById('vinheta');
+  if(q.vinheta){vEl.textContent=q.vinheta;vEl.style.display='block'}else{vEl.style.display='none'}
+  document.getElementById('qText').textContent=q.text;
+  const optsEl=document.getElementById('options');optsEl.innerHTML='';
+  const letters=['A','B','C','D','E'];
+  q.options.forEach((opt,i)=>{const btn=document.createElement('button');btn.className='option-btn';btn.innerHTML=`<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;btn.onclick=()=>chooseOption(i,btn);optsEl.appendChild(btn)});
+  const expl=document.getElementById('explanation');expl.classList.remove('visible');expl.innerHTML='';
+  document.getElementById('feedbackDontknow').classList.remove('visible');
+  if(a.dontknow){markRevealed(q.answer);document.getElementById('feedbackDontknow').classList.add('visible');expl.innerHTML=q.explanation;expl.classList.add('visible');disableOptions()}
+  else if(a.chosen!==null){const btns=optsEl.querySelectorAll('.option-btn');if(a.chosen===q.answer){btns[a.chosen].classList.add('correct')}else{btns[a.chosen].classList.add('wrong');btns[q.answer].classList.add('correct')}expl.innerHTML=q.explanation;expl.classList.add('visible');disableOptions()}
+  else if(a.revealed){markRevealed(q.answer);expl.innerHTML=q.explanation;expl.classList.add('visible');disableOptions()}
+  updateReturnPill();
+}
+function updateReturnPill(){const pill=document.getElementById('returnPill');if(returnTab){document.getElementById('returnPillLabel').textContent={correct:'Aciertos',wrong:'Errores',learn:'Aprender'}[returnTab]||returnTab;pill.classList.add('visible')}else{pill.classList.remove('visible')}}
+function markRevealed(idx){const btns=document.getElementById('options').querySelectorAll('.option-btn');if(btns[idx])btns[idx].classList.add('revealed')}
+function disableOptions(){document.getElementById('options').querySelectorAll('.option-btn').forEach(b=>b.disabled=true)}
+function chooseOption(idx,btnEl){const q=ALL_QUESTIONS[current],a=answers[current];if(a.chosen!==null||a.revealed||a.dontknow)return;a.chosen=idx;const isCorrect=idx===q.answer;const btns=document.getElementById('options').querySelectorAll('.option-btn');disableOptions();if(isCorrect){btnEl.classList.add('correct');fireParticles(btnEl,true,'correct')}else{btnEl.classList.add('wrong');btns[q.answer].classList.add('correct');fireParticles(btnEl,false,'wrong');document.getElementById('questionCard').classList.add('card-shake');setTimeout(()=>document.getElementById('questionCard').classList.remove('card-shake'),400)}const expl=document.getElementById('explanation');expl.innerHTML=q.explanation;expl.classList.add('visible')}
+function revealAnswer(){const q=ALL_QUESTIONS[current],a=answers[current];if(a.chosen!==null||a.revealed||a.dontknow)return;a.revealed=true;markRevealed(q.answer);const expl=document.getElementById('explanation');expl.innerHTML=q.explanation;expl.classList.add('visible');disableOptions()}
+function dontKnow(){const q=ALL_QUESTIONS[current],a=answers[current];if(a.chosen!==null||a.revealed||a.dontknow)return;a.dontknow=true;markRevealed(q.answer);const expl=document.getElementById('explanation');expl.innerHTML=q.explanation;expl.classList.add('visible');disableOptions();document.getElementById('feedbackDontknow').classList.add('visible')}
+function resetQuestion(){answers[current]={chosen:null,revealed:false,dontknow:false};renderQuestion()}
+function prevQuestion(){if(current>0){current--;renderQuestion()}}
+function nextQuestion(){if(current<ALL_QUESTIONS.length-1){current++;renderQuestion()}else{showResults()}}
+function goToQuestion(idx,tab){returnTab=tab;current=idx;const a=answers[idx];if(a.chosen===null&&!a.dontknow&&!a.revealed)a.revealed=true;showScreen('screenQuestion');renderQuestion()}
+function backToResults(){const tab=returnTab;returnTab=null;showScreen('screenResults');if(tab)showTab(tab,document.getElementById('tabCard'+tab.charAt(0).toUpperCase()+tab.slice(1)))}
+function showResults(){
+  const correct=answers.filter((a,i)=>a.chosen===ALL_QUESTIONS[i].answer).length;
+  const wrong=answers.filter((a,i)=>a.chosen!==null&&a.chosen!==ALL_QUESTIONS[i].answer).length;
+  const learn=answers.filter(a=>a.dontknow).length;
+  const pct=Math.round(correct/ALL_QUESTIONS.length*100);
+  document.getElementById('countCorrect').textContent=correct;
+  document.getElementById('countWrong').textContent=wrong;
+  document.getElementById('countLearn').textContent=learn;
+  document.getElementById('ringPct').textContent=pct+'%';
+  setTimeout(()=>document.getElementById('ringCircle').style.strokeDashoffset=364.4-(pct/100)*364.4,100);
+  const emoji=pct>=80?'✨':pct>=60?'🌸':'📖';
+  const title=pct>=80?'¡Excelente!':pct>=60?'¡Buen trabajo!':'¡A estudiar más!';
+  document.getElementById('resEmoji').textContent=emoji;
+  document.getElementById('resTitle').textContent=title;
+  document.getElementById('resSub').textContent=`Acertaste ${correct} de ${ALL_QUESTIONS.length} preguntas (${pct}%)`;
+  document.getElementById('resCorner').textContent=CE[Math.floor(Math.random()*CE.length)];
+  buildTabList('listCorrect','correct');buildTabList('listWrong','wrong');buildLearnList();
+  ['tabCorrect','tabWrong','tabLearn'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  ['tabCardCorrect','tabCardWrong','tabCardLearn'].forEach(id=>document.getElementById(id).classList.remove('active-tab'));
+  showScreen('screenResults');
+}
+function buildTabList(containerId,type){
+  const el=document.getElementById(containerId);el.innerHTML='';
+  ALL_QUESTIONS.forEach((q,i)=>{
+    const a=answers[i];
+    if(type==='correct'&&a.chosen!==q.answer)return;
+    if(type==='wrong'&&(a.chosen===null||a.chosen===q.answer))return;
+    const letters=['A','B','C','D','E'];
+    const isCorrect=a.chosen===q.answer;
+    const item=document.createElement('div');item.className='q-item';item.id=`item-${type}-${i}`;
+    const vH=q.vinheta?`<div class="q-vinheta">${q.vinheta}</div>`:'';
+    const chosenLabel=a.chosen!==null?`${letters[a.chosen]}: ${q.options[a.chosen]}`:'—';
+    item.innerHTML=`<div class="q-item-header" onclick="toggleItem('${type}',${i})"><span class="q-item-num">P${i+1}</span><span class="q-item-text">${q.text.substring(0,80)}${q.text.length>80?'…':''}</span><span class="q-item-chevron">▾</span></div><div class="q-item-body">${vH}<span class="chip ${isCorrect?'chip-green':'chip-red'}">Tu resp: ${chosenLabel}</span><span class="chip chip-green" style="margin-left:6px">Correcta: ${letters[q.answer]}: ${q.options[q.answer]}</span><div class="q-expl">${q.explanation}</div><button class="btn btn-ghost" style="margin-top:8px;font-size:0.8rem" onclick="fireParticles(this,false,'white');goToQuestion(${i},'${type}')">↩ Ir a esta pregunta</button></div>`;
+    el.appendChild(item);
+  });
+  if(!el.children.length)el.innerHTML='<p style="color:var(--muted);font-size:0.85rem;padding:12px 0">Sin preguntas aquí.</p>';
+}
+function buildLearnList(){
+  const el=document.getElementById('listLearn');el.innerHTML='';
+  const learn=answers.filter(a=>a.dontknow);
+  if(!learn.length){el.innerHTML='<p style="color:var(--muted);font-size:0.85rem;padding:12px 0">¡Ninguna marcada para aprender! 🎉</p>';return}
+  el.innerHTML=`<p style="color:var(--muted);font-size:0.84rem;margin-bottom:12px">${learn.length} pregunta(s) para aprender:</p>`;
+  const letters=['A','B','C','D','E'];
+  answers.forEach((a,i)=>{
+    if(!a.dontknow)return;
+    const q=ALL_QUESTIONS[i],lesson=LESSONS[i];
+    const item=document.createElement('div');item.className='q-item';item.id=`item-learn-${i}`;
+    const vH=q.vinheta?`<div class="q-vinheta">${q.vinheta}</div>`:'';
+    item.innerHTML=`<div class="q-item-header" onclick="toggleItem('learn',${i})"><span class="q-item-num">P${i+1}</span><span class="q-item-text">${q.text.substring(0,80)}${q.text.length>80?'…':''}</span><span class="q-item-chevron">▾</span></div><div class="q-item-body">${vH}<span class="chip chip-green">✓ Correcta: ${letters[q.answer]}: ${q.options[q.answer]}</span><div class="learn-aula">${lesson.html}</div><div class="slide-ref" style="margin:6px 0 10px">🪷 ${lesson.slideRef}</div><button class="btn btn-ghost" style="font-size:0.8rem;border-color:rgba(167,139,250,0.4);color:var(--light-purple)" onclick="fireParticles(this,false,'white');goToQuestion(${i},'learn')">↩ Ir a la pregunta</button></div>`;
+    el.appendChild(item);
+  });
+}
+function toggleItem(type,idx){const item=document.getElementById(`item-${type}-${idx}`);if(item)item.classList.toggle('open')}
+function showTab(tab,cardEl){
+  ['tabCorrect','tabWrong','tabLearn'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  ['tabCardCorrect','tabCardWrong','tabCardLearn'].forEach(id=>document.getElementById(id).classList.remove('active-tab'));
+  document.getElementById({correct:'tabCorrect',wrong:'tabWrong',learn:'tabLearn'}[tab]).classList.add('active');
+  document.getElementById({correct:'tabCardCorrect',wrong:'tabCardWrong',learn:'tabCardLearn'}[tab]).classList.add('active-tab');
+  if(cardEl)fireParticles(cardEl,false,{'correct':'tab-correct','wrong':'tab-wrong','learn':'tab-learn'}[tab]);
+}
+function resetAll(){initAnswers();current=0;returnTab=null;['tabCorrect','tabWrong','tabLearn'].forEach(id=>document.getElementById(id).classList.remove('active'));['tabCardCorrect','tabCardWrong','tabCardLearn'].forEach(id=>document.getElementById(id).classList.remove('active-tab'));showScreen('screenStart')}
+initBows();initAnswers();
+</script>
+</body>
+</html>
